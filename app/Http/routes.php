@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'api/v1','middleware'=>'auth:api'], function(){
+Route::group(['prefix'=>'api/v1'], function(){
     //Route::resource('status','StatusController');
     Route::get('status/{id}',['as'=> 'status','uses'=>'StatusController@getStatus']);
 });
