@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'api/v1'], function(){
     //Route::resource('status','StatusController');
-    Route::get('status/{id}',['as'=> 'status','uses'=>'StatusController@getStatus']);
+    Route::get('status/{id}',function($id){
+        return $id;
+    });
 });
 
 Route::auth();
